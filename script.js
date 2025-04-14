@@ -52,7 +52,7 @@ const questions = [
   "Can we hold everyone to the same standard if we are all different?",
   "Is something true because we believe it to be true or because it is objectively true?",
   "Are we a simulation?",
-  "What if nothing mattered",
+  "What if nothing mattered?",
   "Is society too complicated"
 
 
