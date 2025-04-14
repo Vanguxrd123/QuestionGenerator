@@ -1,35 +1,39 @@
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #121212;
-  color: #f1f1f1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+   font-family: 'Arial', sans-serif;
+   background-color: #121212; /* This will be a fallback color if the image doesn't load */
+   background-image: url(https://raw.githubusercontent.com/Vanguxrd123/QuestionGenerator/main/space-background-realistic-starry-night-cosmos-shining-stars-milky-way-stardust-color-galaxy.jpg);
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   color: #f1f1f1;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   margin: 0;
 }
 
 .container {
-  text-align: center;
-  max-width: 600px;
-  padding: 20px;
-  border: 2px solid #333;
-  border-radius: 12px;
-  background-color: #1e1e1e;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+   text-align: center;
+   max-width: 600px;
+   padding: 20px;
+   border: 2px solid #333;
+   border-radius: 12px;
+   background-color: rgba(30, 30, 30, 0.8); /* Slightly transparent background for contrast */
+   box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  background-color: #4caf50;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
+   margin-top: 20px;
+   padding: 10px 20px;
+   font-size: 1rem;
+   border: none;
+   background-color: #4caf50;
+   color: white;
+   border-radius: 8px;
+   cursor: pointer;
 }
 
 button:hover {
-  background-color: #45a049;
+   background-color: #45a049;
 }
