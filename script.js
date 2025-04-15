@@ -71,20 +71,25 @@ async function fetchDailyPhilosophyQuote() {
   ];
 
   try {
-    console.log("Fetching quote...");  // Add this log to check if the request is made
-    const response = await fetch('https://cors-anywhere.herokuapp.com/https://zenquotes.io/api/random');
-    
+    console.log("Fetching quote...");
+    // Added a cache-busting timestamp to the URL
+    const response = await fetch('https://cors-anywhere.herokuapp.com/https://zenquotes.io/api/random?' + new Date().getTime(), {
+      headers: {
+        'Cache-Control': 'no-cache',  // Prevent caching
+      }
+    });
+
     if (!response.ok) {
       throw new Error("Failed to fetch from ZenQuotes API");
     }
     
     const data = await response.json();
-    console.log("Quote fetched:", data);  // Log the fetched data
+    console.log("Quote fetched:", data);
     
     document.getElementById("quoteText").textContent = `"${data[0].q}"`;
     document.getElementById("quoteAuthor").textContent = `— ${data[0].a}`;
   } catch (error) {
-    // Use fallback quotes if the API call fails
+    // If there's an error, fallback quotes will be used
     const randomQuote = fallbackQuotes[Math.floor(Math.random() * fallbackQuotes.length)];
     document.getElementById("quoteText").textContent = `"${randomQuote.content}"`;
     document.getElementById("quoteAuthor").textContent = `— ${randomQuote.author}`;
