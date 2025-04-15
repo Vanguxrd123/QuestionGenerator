@@ -71,8 +71,16 @@ async function fetchDailyPhilosophyQuote() {
   ];
 
   try {
-    const response = await fetch('https://zenquotes.io/api/random');
+    console.log("Fetching quote...");  // Add this log to check if the request is made
+    const response = await fetch('https://cors-anywhere.herokuapp.com/https://zenquotes.io/api/random');
+    
+    if (!response.ok) {
+      throw new Error("Failed to fetch from ZenQuotes API");
+    }
+    
     const data = await response.json();
+    console.log("Quote fetched:", data);  // Log the fetched data
+    
     document.getElementById("quoteText").textContent = `"${data[0].q}"`;
     document.getElementById("quoteAuthor").textContent = `— ${data[0].a}`;
   } catch (error) {
@@ -87,4 +95,3 @@ async function fetchDailyPhilosophyQuote() {
 document.addEventListener("DOMContentLoaded", function() {
   fetchDailyPhilosophyQuote();  // Fetch the quote when the page loads
 });
-
