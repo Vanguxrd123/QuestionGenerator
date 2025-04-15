@@ -54,12 +54,37 @@ const questions = [
   "Are we a simulation?",
   "What if nothing mattered?",
   "Is society too complicated"
-
-
-
 ];
 
 function generateQuestion() {
   const randomIndex = Math.floor(Math.random() * questions.length);
   document.getElementById("question").innerText = questions[randomIndex];
 }
+
+async function fetchDailyPhilosophyQuote() {
+  const fallbackQuotes = [
+    { content: "The unexamined life is not worth living.", author: "Socrates" },
+    { content: "I think, therefore I am.", author: "René Descartes" },
+    { content: "Happiness depends upon ourselves.", author: "Aristotle" },
+    { content: "To be is to do.", author: "Immanuel Kant" },
+    { content: "The only true wisdom is in knowing you know nothing.", author: "Socrates" },
+  ];
+
+  try {
+    const response = await fetch('https://zenquotes.io/api/random');
+    const data = await response.json();
+    document.getElementById("quoteText").textContent = `"${data[0].q}"`;
+    document.getElementById("quoteAuthor").textContent = `— ${data[0].a}`;
+  } catch (error) {
+    // Use fallback quotes if the API call fails
+    const randomQuote = fallbackQuotes[Math.floor(Math.random() * fallbackQuotes.length)];
+    document.getElementById("quoteText").textContent = `"${randomQuote.content}"`;
+    document.getElementById("quoteAuthor").textContent = `— ${randomQuote.author}`;
+    console.error("Error fetching quote:", error);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  fetchDailyPhilosophyQuote();  // Fetch the quote when the page loads
+});
+
