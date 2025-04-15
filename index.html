@@ -5,53 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Question Generator</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      background-color: #f9f9f9;
-      padding: 20px;
-    }
+<style>
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    padding: 20px;
+  }
 
-    .container {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      text-align: center;
-      max-width: 500px;
-      width: 100%;
-      margin-bottom: 30px;
-    }
+  /* Dark Background for Containers */
+  .container {
+    background: #2d2d2d; /* Dark background */
+    color: white; /* Light text */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
 
-    .quote-text {
-      font-style: italic;
-      font-size: 1.1rem;
-      color: #333;
-      margin-bottom: 5px;
-    }
+  .quote-text {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #d3d3d3; /* Light gray text */
+    margin-bottom: 5px;
+  }
 
-    .quote-author {
-      font-weight: bold;
-      color: #555;
-    }
+  .quote-author {
+    font-weight: bold;
+    color: #bbb; /* Slightly lighter gray for author */
+  }
 
-    button {
-      margin-top: 15px;
-      padding: 10px 20px;
-      font-size: 1rem;
-      border: none;
-      background-color: #4f46e5;
-      color: white;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-  </style>
+  button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    background-color: #4f46e5;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+</style>
+
   <script defer>
     // Daily Quote Fetching
     async function fetchDailyPhilosophyQuote() {
