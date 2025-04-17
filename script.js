@@ -39,7 +39,6 @@ const questions = [
   "Could infinite simulated universes exist inside other simulations?",
   "Would you live differently if you knew you were in a simulation?",
   "If we can’t prove we’re not simulated, does that change anything about how we live?",
-  "What does it mean to 'move on' from collective trauma?",
   "If social expectations shape your personality, is there such a thing as a 'true self'?",
   "Can something be meaningful if it’s built on a lie?",
   "Are we just sophisticated biological machines responding to input?",
@@ -47,13 +46,15 @@ const questions = [
   "Do we cling to certain beliefs simply because we fear uncertainty?",
   "If everyone is influenced by their past, can anyone ever be truly objective?",
   "What makes a joke acceptable or unacceptable in society?",
-  "If we knew we were avatars, would morality still matter?",
   "Could a single thought create a universe?",
   "Can we hold everyone to the same standard if we are all different?",
   "Is something true because we believe it to be true or because it is objectively true?",
   "Are we a simulation?",
-  "What if nothing mattered?",
-  "Is society too complicated"
+  "Does anything matter?",
+  "Is society too complicated?",
+  "Are you born with your intelligence or are you a product of your environment?",
+  "If you have nothing to compare something to, can that thing be good or bad?",
+  "What does it mean to be human?",
 ];
 
 function generateQuestion() {
